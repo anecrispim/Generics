@@ -13,9 +13,5 @@ public  class Dados<T> {
 
 	public void setType(T type) {
 		this.type = type;
-	}
-
-	
-	
-	
+	}	
 }

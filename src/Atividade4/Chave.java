@@ -1,45 +1,30 @@
 package Atividade4;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Chave<K, V>{
-	private K key;
-	private V Value;
+	private ArrayList<K> key = new ArrayList<K>();
+	private ArrayList<V> value = new ArrayList<V>();
+	private int cont = 0;
 	
-	public K getKey() {
-		return key;
+	public boolean addChave(K key, V value){
+		for (int i = 0; i < this.key.toArray().length; i++) {
+			if (this.key.toArray()[i] == key) {
+				return false;
+			}
+		}
+		this.key.add(key);
+		this.value.add(value);
+		cont++;
+		return true;
 	}
-	public void setKey(K key) {
-		this.key = key;
-	}
-	
-	public V getValue() {
-		return Value;
-	}
-	public void setValue(V value) {
-		Value = value;
-	}
-	
-	public Chave(K key, V value) {
-		this.key = key;
-		Value = value;
-	}
-	
-	public boolean addLista(List<Chave<String,Integer>> lista) {
-		
-		
-		return false;
-	}
-	public Chave verificaLista(List<Chave<String,Integer>> lista) {
-		//lista.get()
-		
-		
+	@SuppressWarnings("unchecked")
+	public V buscaChave(K key) {
+		for (int i = 0; i < this.key.toArray().length; i++) {
+			if (this.key.toArray()[i] == key) {
+				return (V) this.value.toArray()[i];
+			}
+		}
 		return null;
-			
-	
 	}
-	
-	
-
-	
 }

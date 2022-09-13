@@ -2,7 +2,6 @@ package atividade2;
 
 public class Produto<V> {
 	private V id;
-	
 	private String produto;
 	private double valor;
 	private String dataFabricacao;
